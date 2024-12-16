@@ -3,15 +3,13 @@ import {
   ExecutionContext,
   Injectable,
   Scope,
-  Inject,
 } from '@nestjs/common';
-import { REQUEST } from '@nestjs/core';
 import { TenantConnectionService } from '../services/tenant-connection.service';
 
 @Injectable({ scope: Scope.REQUEST })
 export class TenantGuard implements CanActivate {
   constructor(
-    @Inject(REQUEST) private readonly request: any,
+    // @Inject(REQUEST) private readonly request: any,
     private readonly tenantConnectionService: TenantConnectionService,
   ) {}
 
